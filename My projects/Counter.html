@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+  <head>
+
+  <title></title>
+  <style>
+    body{
+      background-color:indigo;
+    }
+    .container {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction: column;
+    }
+    .btn{
+      width:200px;
+      height:150px;
+      border: none;
+      background-color:rgb(111, 111, 111);
+      box-shadow: 0 0 10px 10px grey inset;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: height 1s, width 1s, background 1s;
+    }
+
+    .btn:active{
+      width:180px;
+      height:120px;
+      background-color:rgb(67, 67, 67);
+    }
+
+    #place{
+      font-size:50px;
+      margin:90px;
+      font-weight:bold;
+      font-family:Consolas;
+      color:purple;
+    }
+  </style>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width">
+
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="place"></h2>
+      <button class="btn" onclick="increment();"></button>
+    </div>
+    <script>
+      let place = document.getElementById("place");
+      place.innerText=0;
+      function increment() {
+        let val = Number(place.innerText);
+        console.log(val++);
+        document.getElementById("place").innerHTML = val++;
+      }
+    </script>
+  </body>
+
+
+</html>

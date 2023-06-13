@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+html,
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: burlywood;
+}
+
+.container {
+    display: flex;
+    font-size: 72px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+}

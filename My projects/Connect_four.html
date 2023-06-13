@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="CF.css" type="text/css" />
+  </head>
+  <body id="body">
+    <div class="table">
+      <table>
+        <tr onclick="clicksHandler(this);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr onclick="clicksHandler(this);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr onclick="clicksHandler(this);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr onclick="clicksHandler(this);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr onclick="clicksHandler(this);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr onclick="clicksHandler(this);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr onclick="clicksHandler(this);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <button class="btn" onclick="main();">Clear Board</button>
+    <br />
+    <script>
+      let body = document.getElementById("body");
+      const tr = document.getElementsByTagName("tr");
+      const td = document.getElementsByTagName("td");
+      let holes =
+        "<input type='radio' class='holes' onclick='clicksHandler();'>";
+      let place = 0;
+      let change = 0;
+      let history;
+      let classname;
+      let bgColor;
+
+      function main() {
+        let i = 0;
+        while (i < td.length) {
+          td[i].innerHTML = holes;
+          i++;
+        }
+      }
+
+      main();
+      function reset(param) {
+        // for(var i =0; i<tr[0].length; i++) {
+          // if(param.children[param.children.length - place].children[0].classList=="holes"){
+            place = 0;
+          // }
+        // }
+      }
+      function clicksHandler(param) {
+        // This will not make it if a column(tr) has been clicked and another column(tr) is clicked after it will have the disc positioned above the disc of the previous column(tr).
+        if (param != history) reset(param);
+        // taking the length of childrens of the first column(tr)(i.e. tds).. any can be taken because every column(tr) has the same childrens
+      
+        console.log(param);
+
+        for(let i=0; i<tr.length; i++) {
+        if(param==tr[i])
+        {
+          change++;
+          if(change%2==0){
+            classname = "holes-green";
+            bgColor = "rgb(135, 30, 30)";
+          }
+          // In the first click the disc will turn red and background will turn green indicating that the turn is of green disc(or player controlling the green disc) and in the second click the disc will turn green and background will turn red(vice versa) and this will go on and on until the game is finnished declaring a winner of connect four.
+          else{
+            classname = "holes-red";
+            bgColor = "rgb(53, 129, 53)";
+          }
+        }
+      }
+        for (let i = 0; i < tr[0].children.length; i++) {
+          // first column(tr):
+          if (
+            param == tr[0] ||
+            param == tr[0].children[i] ||
+            param == tr[0].children[i].children[0]
+          ) {
+            place++;
+            discPlacer(0);
+          }
+          // second:
+          else if (
+            param == tr[1] ||
+            param == tr[1].children[i] ||
+            param == tr[1].children[i].children[0]
+          ) {
+            place++;
+            discPlacer(1);
+          }
+
+          // third:
+          else if (
+            param == tr[2] ||
+            param == tr[2].children[i] ||
+            param == tr[2].children[i].children[0]
+          ) {
+            place++;
+            discPlacer(2);
+          }
+          // fourth:
+          else if (
+            param == tr[3] ||
+            param == tr[3].children[i] ||
+            param == tr[3].children[i].children[0]
+          ) {
+            place++;
+            discPlacer(3);
+          }
+          // fifth:
+          else if (
+            param == tr[4] ||
+            param == tr[4].children[i] ||
+            param == tr[4].children[i].children[0]
+          ) {
+            place++;
+            discPlacer(4);
+          }
+          // sixth:
+          else if (
+            param == tr[5] ||
+            param == tr[5].children[i] ||
+            param == tr[5].children[i].children[0]
+          ) {
+            place++;
+            discPlacer(5);
+          }
+          // seventh:
+          else if (
+            param == tr[6] ||
+            param == tr[6].children[i] ||
+            param == tr[6].children[i].children[0]
+          ) {
+            place++;
+            discPlacer(6);
+          }
+          break;
+        }
+        history = param;
+      }
+      function discPlacer(i) {
+        // if(place>6) reset();
+        // if(tr[i].children[tr[i].children.length - place].children[0].classList!="holes"){
+        //   tr[i].children[
+        //     tr[i].children.length - place
+        //   ].children[0].classList.add(classname);
+        //   body.style.backgroundColor = bgColor;
+        //   place++;
+        //   }
+        if (place % 2 == 0) {
+          tr[i].children[
+            tr[i].children.length - place
+          ].children[0].classList.add(classname);
+          body.style.backgroundColor = bgColor;
+        } else {
+          tr[i].children[
+            tr[i].children.length - place
+          ].children[0].classList.add(classname);
+          body.style.backgroundColor = bgColor;
+        }
+      }
+      function clearBoard() {
+        main();
+      }
+    </script>
+  </body>
+</html>

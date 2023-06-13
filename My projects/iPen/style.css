@@ -1,0 +1,83 @@
+.container-fluid{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    background-color: black;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: aliceblue;
+}
+
+.navbar{
+    background-color:black;
+    color: white;
+}
+.resizer{
+    width: 50%;
+    border: 5px solid black;
+    resize: both;
+}
+.CSS{
+    width: 100%;
+    background-color: rgb(87, 38, 20);
+    color: aliceblue;
+    overflow:hidden;
+    overflow-x:scroll;
+    outline:none;
+    border: none;
+    height: 100%;
+}
+.CSS::before{
+    content: "CSS";
+    background-color: black;
+    border-radius:5px;
+    color: lightgrey;
+    padding: 2px;
+}
+
+.JS{
+    width: 100%;
+    background-color: rgb(34, 58, 103);
+    color: aliceblue;
+    overflow:hidden;
+    overflow-x:scroll;
+    outline:none;
+    border: none;
+    height: 100%;
+}
+
+.JS::before{
+    content: "JS";
+    background-color: black;
+    border-radius:5px;
+    color: lightgrey;
+    padding: 2px;
+}
+
+.body{
+    width: 100%;
+    overflow: hidden;
+    background-color:rgba(75, 9, 75, 0.57);
+}
+
+.body::before{
+    content: "Output";
+    background-color: black;
+    border-radius:5px;
+    color: lightgrey;
+    padding: 2px;
+}

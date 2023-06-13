@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+        <style>
+            .frame {
+                vertical-align: middle;
+                top: 50%;
+                padding: 40px;
+                background-color: rgb(36,36,54);
+                border:1px solid rgb(168,100,168);
+                border-style: ridge;
+                margin-top:90px;
+                z-index:-1;
+                width:auto;
+                height:auto;
+            }
+            body {
+                background-color:rgb(71,66,87);
+                font-family: Helvetica;
+            }
+            button {
+                font-size :30px;
+                color: black; 
+                font-family: Helvetica;
+                text-align: center;
+                z-index: 1;
+                padding: 30px;
+                margin:7px;
+                width:60px;
+                height:60px;
+                border: none;
+                border-radius:5px;
+                background-color: rgb(255, 255, 255);
+            }
+
+            .border-fitting .bottom-border {
+                border-bottom: 10px solid black;
+                width:240px;
+                top: 80px;
+                border-radius:10px;
+                position: absolute;
+            }
+            .border-fitting .bottom-border2 {
+                border-bottom: 10px solid black;
+                width:240px;
+                top: 160px;
+                border-radius:10px;
+                position: absolute;
+            }
+            .border-fitting .left-border {
+                border-left: 10px solid black;
+                top:0px;
+                border-radius:10px;
+                left: 70px;
+                width:140px;
+                height:240px;
+                position: absolute;
+            }
+            .border-fitting .right-border {
+                border-right: 10px solid black;
+                top:0px;
+                border-radius:10px;
+                left: 20px;
+                width:140px;
+                height:240px;
+                position: absolute;
+            }
+            .border-fitting{
+                position: absolute;
+                top: 125px;
+                left: 490px;
+                z-index: -1;
+            }
+        </style>
+    <title></title>
+    </head>
+    <body>
+        <div class="border-fitting">
+            <div class="bottom-border"></div>
+            <div class="bottom-border2"></div>
+            <div class="left-border"></div>
+            <div class="right-border"></div>
+        </div>
+<table class="frame">
+    <tr>
+        <td><button id="btn" onclick="placer(this);"></button></td>
+        <td><button id="btn2" onclick="placer(this);"></button></td>
+        <td><button id="btn3" onclick="placer(this);"></button></td>
+    </tr>
+    <tr>
+        <td><button id="btn4" onclick="placer(this);"></button></td>
+        <td><button id="btn5" onclick="placer(this);"></button></td>
+        <td><button id="btn6" onclick="placer(this);"></button></td>
+    </tr>
+    <tr>
+        <td><button id="btn7" onclick="placer(this);"></button></td>
+        <td><button id="btn8" onclick="placer(this);"></button></td>
+        <td><button id="btn9" onclick="placer(this);"></button></td>
+    </tr>
+    </table>
+    
+    <script>
+        function placer(parm){
+            
+        }
+    </script>
+    </body>
+
+
+</html>

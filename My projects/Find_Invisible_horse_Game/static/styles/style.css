@@ -1,0 +1,88 @@
+body{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.lobby {
+    background-image: url("../images/lobby-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#horse {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+    cursor:none;
+}
+
+.easy #horse{
+    width: 240px;
+    height: 240px;
+}
+.medium #horse{
+    width: 200px;
+    height: 200px;
+}
+.hard #horse{
+    width: 150px;
+    height: 150px;
+}
+.horseMaster #horse{
+    width: 100px;
+    height: 100px;
+}
+.ground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    cursor:none;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-light);
+    --bs-tooltip-color: var(--bs-dark)
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.fading{
+    animation-name: fade-out;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+    0% { opacity: 1;}
+    100% { opacity: 0;}
+}
+
+.tries{
+    position: absolute;
+    font-size: 36px;
+    top: 8px;
+    right: 8px;
+}
+
+.tries::before{
+    content: "Tries Left: ";
+    color: cadetblue;
+}
+
+.show{
+    display: block;
+}

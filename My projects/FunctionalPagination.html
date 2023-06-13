@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+  <head>
+    <title>Database Pagination</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      h1 {
+        color: green;
+      }
+      h3 {
+        color: grey;
+      }
+      h4 {
+        color: green;
+      }
+      .tableContainer {
+        height: 60%;
+      }
+      table {
+        position: relative;
+        top: 20px;
+        margin: auto;
+        width: 50%;
+        font-size: 26px;
+        border: 5px inset white;
+      }
+      td,
+      th {
+        border: 1px double black;
+        border-radius: 2px;
+      }
+      th {
+        background-color: darkgrey;
+        color: black;
+        font-weight: bold;
+      }
+      td {
+        color: darkgrey;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 360px;
+      }
+
+      input[type="button"] {
+        background-color: transparent;
+        border: none;
+        margin: 10px;
+        border-radius: 5px;
+        padding: 8px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+      }
+      .pages {
+        transition: background 300ms linear;
+      }
+      .pages:hover {
+        background-color: grey;
+      }
+      .pages.active {
+        font-weight: bold;
+        text-decoration: 1px solid underline;
+      }
+      input[type="button"].btns {
+        background-color: green;
+      }
+
+      input[type="button"].btns:hover {
+        background-color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Database Pagination</h1>
+    <h3>HR Database Table:- Employees</h3>
+    <h4 id="NumberTeller"></h4>
+    <div class="tableContainer">
+      <table>
+        <tr>
+          <th>Emp_Id</th>
+          <th>Fname</th>
+          <th>Lname</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="pagination">
+      <input type="button" value="&larrbfs;" class="btns" onclick="back();" />
+      <input type="button" value="1" class="pages" onclick="goPage(event);" />
+      <input type="button" value="2" class="pages" onclick="goPage(event);" />
+      <input type="button" value="3" class="pages" onclick="goPage(event);" />
+      <input type="button" value="4" class="pages" onclick="goPage(event);" />
+      <input
+        type="button"
+        value="&rarrbfs;"
+        class="btns"
+        onclick="forward();"
+      />
+    </div>
+    <script>
+      const pages = document.getElementsByClassName("pages");
+
+      pages[0].click();
+
+      function back() {
+        let ActivePage =
+          document.getElementsByClassName("pages active")[0].value;
+        if (ActivePage != 1) {
+          pages[ActivePage - 2].click();
+        } else {
+          pages[pages.length - 1].click();
+        }
+      }
+
+      function forward() {
+        let ActivePage =
+          document.getElementsByClassName("pages active")[0].value;
+        if (ActivePage != 4) {
+          pages[ActivePage].click();
+        } else {
+          pages[pages.length - pages.length].click();
+        }
+      }
+
+      function goPage(evt) {
+        // It will make the current element active (Display):
+        let pageNo = document.getElementById("NumberTeller");
+        for (let i = 0; i < pages.length; i++) {
+          pages[i].className = pages[i].className.replace(" active", "");
+        }
+        pageNo.innerText = `Page:- ${evt.currentTarget.value} of table Employee.`;
+        evt.currentTarget.className += " active";
+
+        // add the name attribute to the element (For Servlet to get parameter):
+
+        for (let i = 0; i < pages.length; i++) {
+          pages[i].setAttribute("name", "");
+        }
+        evt.currentTarget.setAttribute("name", "page");
+      }
+    </script>
+  </body>
+</html>

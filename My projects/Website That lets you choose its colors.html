@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+
+    <head>
+
+    <title>Website that lets you choose its colors</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        .chooser-page{
+            /* margin-top: -8px;
+            margin-left: -8px; */
+            background-color:rgb(100, 100, 100);
+            background-size: cover;
+            border-bottom:5px solid rgb(91, 14, 14);
+            border-radius: 20px;
+            box-shadow: 2px 5px 10px 5px green;
+        }
+
+        .comp{
+            color:red;
+            display: inline;
+        }
+        table{
+            margin: auto;
+            padding:50px;
+        }
+        td{
+            padding:20px;
+            font-size:36px;
+            align-content: center;
+        }
+        input[type="color"]{
+            cursor: pointer;
+            width:150px;
+            height:100px;
+            margin:auto;
+            color:magenta;
+            border-radius: 50px;
+            border:5px inset yellow;
+            box-shadow: 0 0 5px 4px inset black;
+        }
+
+        .set{
+            padding:30px;
+            cursor: pointer;
+            width:150px;
+            background-color: cornflowerblue;
+            border: 2px solid white;
+            border-radius: 50px;
+            color:white;
+            box-shadow: 0 0 5px 4px inset black;
+        }
+    </style>
+
+    </head>
+    <body>
+    <div class="chooser-page">
+        <center>
+            <table>
+                <tr>
+                    <td><p class="comp">*</p>Background Color:</td>
+                    <td><p class="comp">*</p>Foreground Color:</td>
+                    <td><p class="comp">*</p>Accent Color:</td>
+                    <td>Feature Color:</td>
+                </tr>
+                <tr>
+                    <td><input type="color" id="bgColor"></td>
+                    <td><input type="color" id="fgColor"></td>
+                    <td><input type="color" id="accentColor"></td>
+                    <td><input type="color" id="featureColor"></td>
+                </tr>
+            </table>
+            <button onclick="setColor();" class="set">Set Colors</button>
+        </center>
+    </div>
+    <script>
+        function setColor(){
+            let bgColor = document.getElementById("bgColor").value;
+            let fgColor = document.getElementById("fgColor").value;
+            let accentColor = document.getElementById("accentColor").value;
+            let featureColor = document.getElementById("featureColor").value;
+
+            console.log("background-color: " + bgColor + ", color:" + fgColor +", accentColor:" + accentColor + ", featureColor:" + featureColor);
+        }
+    </script>
+    </body>
+
+
+</html>

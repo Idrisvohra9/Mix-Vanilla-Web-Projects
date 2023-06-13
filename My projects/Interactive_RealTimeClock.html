@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en-IN">
+  <head>
+    <title>Interactive Clock</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      body {
+        background-image: url("1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container {
+        width: 100%;
+        margin-top: 100px;
+      }
+      #date {
+        display: flex;
+        justify-content: center;
+        color: black;
+        font-size: 36px;
+      }
+
+      #time {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        color: black;
+        font-size: 46px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="time" onclick="expandTime();"></div>
+      <div id="date" onclick="expandDate();"></div>
+    </div>
+
+    <script>
+      SetTime();
+      SetDate();
+      time1 = setInterval(SetDate(), 1);
+      time2 = setInterval(SetTime(), 1);
+    //   SetTime();
+      function SetDate() {
+        let D = new Date();
+        let placeDate = document.getElementById("date");
+
+        let date = D.toISOString().substring(0, 10);
+        placeDate.innerHTML = date;
+        clearInterval(time1);
+      }
+
+      function SetTime() {
+        let D = new Date();
+        let placeTime = document.getElementById("time");
+
+        let date = D.toTimeString().substring(0, 8);
+        placeTime.innerHTML = date;
+        clearInterval(time2);
+      }
+    </script>
+  </body>
+</html>

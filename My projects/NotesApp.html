@@ -56,17 +56,21 @@
     addBtn.addEventListener("click", function () {
       let addTxt = document.getElementById("addTxt");
       let notes = localStorage.getItem("notes");
-      if (notes == null) {
-        notesObj = [];
-      } else {
-        notesObj = JSON.parse(notes);
-      }
-      notesObj.push(addTxt.value);
-      localStorage.setItem("notes", JSON.stringify(notesObj));
-      addTxt.value = "";
-      console.log(notesObj);
+      // console.log();
+      if (addTxt.value.length > 0) {
 
-      showNotes();
+        if (notes == null) {
+          notesObj = [];
+        } else {
+          notesObj = JSON.parse(notes);
+        }
+        notesObj.push(addTxt.value);
+        localStorage.setItem("notes", JSON.stringify(notesObj));
+        addTxt.value = "";
+        console.log(notesObj);
+
+        showNotes();
+      }
     });
 
     // function to show elements from localStorage

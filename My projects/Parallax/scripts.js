@@ -15,19 +15,12 @@ addEventListener("scroll", () => {
     turtle.style.top = 60 - value + 'px';
     turtle.style.right = 210 - value + 'px';
 });
-explore.addEventListener("click", smoothScroll)
+explore.addEventListener("click", scrollSmoothed)
 
 
-function smoothScroll() {
-    let i = 0;
-    let scroll = setInterval(() => {
-        i++;
-        window.scrollTo(0, i)
-    }, 1);
-    console.log("out");
-    if (i == window.innerHeight- 10) {
-        clearInterval(scroll);
-        console.log("Interval cleared");
-        explore.removeEventListener("click",smoothScroll);
-    }
-}
+function scrollSmoothed() {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  }

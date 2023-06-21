@@ -1,0 +1,84 @@
+:root {
+    --dark: #1f1f24;
+    --purple: #c2c2ff;
+}
+
+html,
+body {
+    position: relative;
+    cursor: none;
+    height: 100%;
+    width: 100%;
+    background: var(--dark);
+    margin: 0;
+}
+
+.box {
+    padding: 30px;
+    color: var(--purple);
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 30px;
+}
+
+.right {
+    float: right;
+}
+
+.a-link {
+    color: #fff;
+    font-weight: 800;
+    cursor: none;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    display: inline-block;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+#cursor {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    clip-path: polygon(20% 0, 85% 10%, 100% 55%, 70% 90%, 10% 90%, 0 40%);
+    border-radius: 5px;
+    background: var(--purple);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9;
+    transition: transform .5s;
+}
+
+#cursor.hovered {
+    transform: scale(1.75);
+}
+
+#cursor.hovered.shape1 {
+    clip-path: polygon(0 23%, 100% 14%, 80% 79%, 0 69%);
+}
+
+#cursor.hovered.shape2 {
+    clip-path: polygon(12% 21%, 94% 30%, 100% 70%, 0 80%);
+}
+
+#cursor.hovered.shape3 {
+    clip-path: polygon(0 30%, 100% 34%, 96% 79%, 6% 71%);
+}
+
+#cursor.hovered.shape4 {
+    clip-path: polygon(11% 22%, 100% 34%, 94% 80%, 0 73%);
+}

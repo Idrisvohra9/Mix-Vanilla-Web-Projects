@@ -15,28 +15,8 @@
         align-items: center;
         min-height: 100vh;
         overflow: hidden;
-        background: #2f363e;
+        background: #1d1b1b;
       }
-      .popup{
-        text-align: center;
-        margin:auto;
-        top: 20px;
-        position: absolute;
-        font-size: 26px;
-        color: white;
-        text-shadow: 0 0 10px white;
-        opacity: 0;
-        animation-name: disappear;
-        animation-duration:3s;
-        animation-timing-function:ease-out;
-        
-      }
-
-      @keyframes disappear {
-        0% { opacity:1;}
-        100% { opacity:0;}
-      }
-
       #time {
         position: relative;
         width: 250px;
@@ -139,7 +119,6 @@
     </style>
   </head>
   <body>
-    <p class="popup">Press Escape to exit sleep mode.</p>
     <div id="time">
       <div class="circle" style="--clr: #ff2972">
         <div class="dots sec_dot"></div>
@@ -217,19 +196,6 @@
         // 360 / 12 hrs = 30
       });
 
-      document.addEventListener(
-        "keydown",
-        (event) => {
-          var name = event.key;
-          var code = event.code;
-          if(event.key=="Escape"){
-            window.open("https://www.youtube.com");          
-          }
-            
-          // Alert the key name and key code on keydown
-        },
-        false
-      );
     </script>
   </body>
 </html>

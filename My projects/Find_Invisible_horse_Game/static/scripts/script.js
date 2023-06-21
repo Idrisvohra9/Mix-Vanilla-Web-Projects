@@ -135,7 +135,7 @@ function horseFound() {
   horse.style.opacity = "1";
   console.log("Horse found!");
   foundHorse = true;
-  let noise = noises[Math.round(Math.random() * (noises.length - 1))];
+  let noise = noises[Math.round(Math.random() * (noises.length))];
   var neigh = new Audio(noise);
   neigh.play();
 }

@@ -125,6 +125,8 @@ function Save() {
   }
   else {
     makeNewContacts();
+    window.location.reload();
+    // showContact();
   }
 }
 

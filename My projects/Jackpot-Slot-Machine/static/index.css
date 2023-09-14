@@ -1,0 +1,42 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    background-image: url("../assets/images/circle-scatter-haikei.svg");
+    background-size: cover;
+    color: aliceblue;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.white-gradient {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(to top, white, transparent);
+}
+
+.container{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.machine-outline{
+    border: 15px outset pink;
+}
+.machine-display{
+    padding: 1rem;
+    border: 5px inset purple;
+}
+
+.coins-remain{
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    color: gold;
+}
